@@ -16,6 +16,7 @@ import LineGradient from '../assets/line-gradient.svg'
 import MenAndWoman from '../assets/men-and-woman.svg'
 import { Recommendations } from '../components/Recommendations'
 import { Experiment } from '../components/Experiment'
+import { Doubts } from '../components/Doubts'
 
 export default function Home() {
   return (
@@ -51,6 +52,7 @@ export default function Home() {
       <Features />
       <Recommendations />
       <Experiment />
+      <Doubts />
     </div>
   )
 }
