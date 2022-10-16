@@ -6,8 +6,6 @@ export const Main = styled.main`
   margin: 0 auto;
   margin-top: 5rem;
 
-  padding: 0 3rem;
-
   display: flex;
   align-items: flex-start;
   justify-content: space-between;

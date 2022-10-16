@@ -20,6 +20,8 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   align-items: center;
   justify-content: center;
 
+  gap: 0.5rem;
+
   ${({ variant, theme }) => css`
     background: ${variant === 'primary'
       ? theme['yellow-500']

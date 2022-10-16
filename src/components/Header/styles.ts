@@ -3,6 +3,11 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   background: ${(props) => props.theme['yellow-500']};
   padding: 1rem;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 2;
 `
 
 export const Content = styled.div`
@@ -11,8 +16,6 @@ export const Content = styled.div`
 
   display: flex;
   align-items: center;
-
-  padding: 0 3rem;
 `
 
 export const Menu = styled.ul`

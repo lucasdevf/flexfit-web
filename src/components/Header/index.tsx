@@ -14,6 +14,7 @@ import {
 /* ASSETS */
 import Logo from '../../assets/logo.svg'
 import { Button } from '../Button'
+import { SignIn } from 'phosphor-react'
 
 export function Header() {
   return (
@@ -33,7 +34,11 @@ export function Header() {
             <ButtonCreateAccount>Criar conta</ButtonCreateAccount>
           </Link>
 
-          <Button title="Entrar" variant="secondary" />
+          <Button
+            title="Entrar"
+            icon={<SignIn size={20} />}
+            variant="secondary"
+          />
         </AccountOptions>
       </Content>
     </HeaderContainer>
