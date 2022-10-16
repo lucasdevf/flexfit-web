@@ -29,7 +29,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
 
     &:hover {
       background: ${variant === 'primary'
-        ? theme['yellow-500']
+        ? theme['yellow-600']
         : theme['purple-600']};
     }
   `}
