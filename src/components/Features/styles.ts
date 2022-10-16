@@ -7,8 +7,6 @@ export const FeaturesContainer = styled.section`
   padding-top: 3rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid ${({ theme }) => theme['gray-200']};
-
-  margin-bottom: 5rem;
 `
 
 export const Slider = styled.div`

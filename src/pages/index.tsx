@@ -14,6 +14,7 @@ import { Main, Content, Brand, ButtonExperiment } from '../styles/pages/home'
 /* ASSETS */
 import LineGradient from '../assets/line-gradient.svg'
 import MenAndWoman from '../assets/men-and-woman.svg'
+import { Recommendations } from '../components/Recommendations'
 
 export default function Home() {
   return (
@@ -46,8 +47,8 @@ export default function Home() {
       </Main>
 
       <DownloadApp />
-
       <Features />
+      <Recommendations />
     </div>
   )
 }

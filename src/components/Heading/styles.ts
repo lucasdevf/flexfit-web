@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 interface HeadingContainerProps {
   centerTitle: boolean
+  centerSubtitle: boolean
 }
 
 export const HeadingContainer = styled.div<HeadingContainerProps>`
@@ -21,6 +22,7 @@ export const HeadingContainer = styled.div<HeadingContainerProps>`
     color: ${({ theme }) => theme['gray-600']};
     line-height: 2rem;
 
-    text-align: justify;
+    text-align: ${({ centerSubtitle }) =>
+      centerSubtitle ? 'center' : 'justify'};
   }
 `

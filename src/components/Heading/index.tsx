@@ -4,11 +4,17 @@ interface Props {
   title: string
   subtitle: string
   centerTitle?: boolean
+  centerSubtitle?: boolean
 }
 
-export function Heading({ title, subtitle, centerTitle = false }: Props) {
+export function Heading({
+  title,
+  subtitle,
+  centerTitle = false,
+  centerSubtitle = false,
+}: Props) {
   return (
-    <HeadingContainer centerTitle={centerTitle}>
+    <HeadingContainer centerTitle={centerTitle} centerSubtitle={centerSubtitle}>
       <strong>{title}</strong>
 
       <span>{subtitle}</span>
