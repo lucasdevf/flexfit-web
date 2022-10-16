@@ -16,6 +16,10 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
 
   cursor: pointer;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   ${({ variant, theme }) => css`
     background: ${variant === 'primary'
       ? theme['yellow-500']
