@@ -26,7 +26,7 @@ export function DownloadApp() {
       <Heading
         title="Baixe o nosso app"
         subtitle="Nosso app está disponível na Google Play e também 
-        na Play Store. Caso você deseje, também é possível 
+        na Apple Store. Caso você deseje, também é possível 
         acessar todas as funcionalidades aqui pelo nosso site"
         centerTitle
       />

@@ -5,6 +5,8 @@ import Image from 'next/future/image'
 /* COMPONENTS */
 import { Header } from '../components/Header'
 import { Heading } from '../components/Heading'
+import { DownloadApp } from '../components/DownloadApp'
+import { Features } from '../components/Features'
 
 /* STYLES */
 import { Main, Content, Brand, ButtonExperiment } from '../styles/pages/home'
@@ -12,7 +14,6 @@ import { Main, Content, Brand, ButtonExperiment } from '../styles/pages/home'
 /* ASSETS */
 import LineGradient from '../assets/line-gradient.svg'
 import MenAndWoman from '../assets/men-and-woman.svg'
-import { DownloadApp } from '../components/DownloadApp'
 
 export default function Home() {
   return (
@@ -45,6 +46,8 @@ export default function Home() {
       </Main>
 
       <DownloadApp />
+
+      <Features />
     </div>
   )
 }
