@@ -1,3 +1,17 @@
+/* NEXT */
+import Head from 'next/head'
+
+/* COMPONENTS */
+import { Header } from '../components/Header'
+
 export default function Home() {
-  return <h1>Home</h1>
+  return (
+    <div>
+      <Head>
+        <title>Home | FlexFit</title>
+      </Head>
+
+      <Header />
+    </div>
+  )
 }
