@@ -11,6 +11,8 @@ export const Main = styled.main`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
+  gap: 5rem;
 `
 
 export const Content = styled.div``

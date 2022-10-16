@@ -12,6 +12,7 @@ import { Main, Content, Brand, ButtonExperiment } from '../styles/pages/home'
 /* ASSETS */
 import LineGradient from '../assets/line-gradient.svg'
 import MenAndWoman from '../assets/men-and-woman.svg'
+import { DownloadApp } from '../components/DownloadApp'
 
 export default function Home() {
   return (
@@ -40,8 +41,10 @@ export default function Home() {
           <ButtonExperiment title="Quero experimentar" variant="secondary" />
         </Content>
 
-        <Image src={MenAndWoman} alt="" />
+        <Image src={MenAndWoman} alt="" width={340} />
       </Main>
+
+      <DownloadApp />
     </div>
   )
 }
