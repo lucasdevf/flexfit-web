@@ -12,7 +12,7 @@ import {
 } from './styles'
 
 /* ASSETS */
-import Logo from '../../assets/logo.svg'
+import Logo from '../../assets/logo-white.svg'
 import { Button } from '../Button'
 import { SignIn } from 'phosphor-react'
 
@@ -34,11 +34,13 @@ export function Header() {
             <ButtonCreateAccount>Criar conta</ButtonCreateAccount>
           </Link>
 
-          <Button
-            title="Entrar"
-            icon={<SignIn size={20} />}
-            variant="secondary"
-          />
+          <Link href="/login">
+            <Button
+              title="Entrar"
+              icon={<SignIn size={20} />}
+              variant="secondary"
+            />
+          </Link>
         </AccountOptions>
       </Content>
     </HeaderContainer>

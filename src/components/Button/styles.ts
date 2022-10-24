@@ -9,7 +9,7 @@ interface ButtonContainerProps {
 export const ButtonContainer = styled.button<ButtonContainerProps>`
   all: unset;
   color: white;
-  padding: 0.7rem 2rem;
+  padding: 1rem 2rem;
 
   border-radius: 8px;
   font-weight: 600;
