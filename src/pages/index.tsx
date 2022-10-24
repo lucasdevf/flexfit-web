@@ -17,6 +17,7 @@ import MenAndWoman from '../assets/men-and-woman.svg'
 import { Recommendations } from '../components/Recommendations'
 import { Experiment } from '../components/Experiment'
 import { Doubts } from '../components/Doubts'
+import { Footer } from '../components/Footer'
 
 export default function Home() {
   return (
@@ -53,6 +54,8 @@ export default function Home() {
       <Recommendations />
       <Experiment />
       <Doubts />
+
+      <Footer />
     </div>
   )
 }

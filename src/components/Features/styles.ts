@@ -7,6 +7,10 @@ export const FeaturesContainer = styled.section`
   padding-top: 3rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid ${({ theme }) => theme['gray-200']};
+
+  @media only screen and (max-width: 1440px) {
+    margin: 0 3rem;
+  }
 `
 
 export const Slider = styled.div`

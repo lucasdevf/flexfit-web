@@ -5,6 +5,10 @@ export const ExperimentContainer = styled.section`
 
   padding: 3rem 0;
   margin-top: 2rem;
+
+  @media only screen and (max-width: 1440px) {
+    padding: 3rem;
+  }
 `
 
 export const Content = styled.div`

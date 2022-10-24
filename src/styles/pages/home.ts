@@ -11,6 +11,11 @@ export const Main = styled.main`
   justify-content: space-between;
 
   gap: 5rem;
+
+  @media only screen and (max-width: 1440px) {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 `
 
 export const Content = styled.div``

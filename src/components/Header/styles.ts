@@ -8,6 +8,11 @@ export const HeaderContainer = styled.header`
   top: 0;
 
   z-index: 2;
+
+  @media only screen and (max-width: 1440px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `
 
 export const Content = styled.div`
@@ -16,6 +21,10 @@ export const Content = styled.div`
 
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: 1440px) {
+    margin: 0 3rem;
+  }
 `
 
 export const Menu = styled.ul`

@@ -12,6 +12,12 @@ export const DownloadAppContainer = styled.section`
   margin: 0 auto;
 
   padding: 3rem 0;
+
+  @media only screen and (max-width: 1440px) {
+    margin: 0 3rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
 `
 
 export const Links = styled.div`
