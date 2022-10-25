@@ -9,7 +9,12 @@ import { DownloadApp } from '../components/DownloadApp'
 import { Features } from '../components/Features'
 
 /* STYLES */
-import { Main, Content, Brand, ButtonExperiment } from '../styles/pages/home'
+import {
+  Main,
+  Content,
+  Brand,
+  ButtonExperiment,
+} from '../styles/pages/landing-page'
 
 /* ASSETS */
 import LineGradient from '../assets/line-gradient.svg'

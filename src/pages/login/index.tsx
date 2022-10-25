@@ -5,14 +5,14 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 
-import { Button } from '../components/Button'
-import { ButtonSignInWithGoogle } from '../components/ButtonSignInWithGoogle'
-import { Input } from '../components/Input'
-import { LoginContainer, NoHaveAccount } from '../styles/pages/login'
-import Logo from '../assets/logo.svg'
+import { Button } from '../../components/Button'
+import { ButtonSignInWithGoogle } from '../../components/ButtonSignInWithGoogle'
+import { Input } from '../../components/Input'
+import { LoginContainer, NoHaveAccount } from '../../styles/pages/login'
+import Logo from '../../assets/logo.svg'
 import { useContext, useState } from 'react'
-import { AuthContext } from '../contexts/AuthContext'
-import { Error } from '../components/Error'
+import { AuthContext } from '../../contexts/AuthContext'
+import { Error } from '../../components/Error'
 
 const formSchema = z.object({
   email: z.string().email('Informe um e-mail válido'),
