@@ -8,12 +8,15 @@ import { queryClient } from '../services/queryClient'
 import { ThemeProvider } from 'styled-components'
 import { defaultTheme } from '../styles/theme/default'
 import { GlobalStyles } from '../styles/global'
+import { AuthContextProvider } from '../contexts/AuthContext'
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
+        <AuthContextProvider>
+          <Component {...pageProps} />
+        </AuthContextProvider>
       </QueryClientProvider>
 
       <GlobalStyles />

@@ -33,4 +33,8 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
         : theme['purple-600']};
     }
   `}
+
+  &:disabled {
+    opacity: 0.7;
+  }
 `

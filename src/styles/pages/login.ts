@@ -15,6 +15,14 @@ export const LoginContainer = styled.div`
     gap: 1.5rem;
 
     width: 20vw;
+
+    @media only screen and (max-width: 1024px) {
+      width: 40vw;
+    }
+
+    @media only screen and (max-width: 425px) {
+      width: 90vw;
+    }
   }
 `
 
