@@ -4,6 +4,10 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+
+  label {
+    font-weight: 500;
+  }
 `
 
 interface InputStyledProps {

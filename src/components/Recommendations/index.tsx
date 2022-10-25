@@ -1,5 +1,5 @@
 /* COMPONENTS */
-import { Heading } from '../Heading'
+import { HeadingLandingPage } from '../HeadingLandingPage'
 
 /* STYLES */
 import {
@@ -33,7 +33,7 @@ export function Recommendations() {
 
   return (
     <RecommendationsContainer>
-      <Heading
+      <HeadingLandingPage
         title="Recomendações"
         subtitle="Profissionais de diversas áreas recomendam a nossa plataforma"
         centerTitle

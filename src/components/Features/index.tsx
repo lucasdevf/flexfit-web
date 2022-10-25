@@ -2,7 +2,7 @@
 import Image from 'next/future/image'
 
 /* COMPONENTS */
-import { Heading } from '../Heading'
+import { HeadingLandingPage } from '../HeadingLandingPage'
 
 /* ICONS */
 import { ArrowsLeftRight, CaretLeft, CaretRight } from 'phosphor-react'
@@ -71,7 +71,7 @@ export function Features() {
 
   return (
     <FeaturesContainer>
-      <Heading
+      <HeadingLandingPage
         title="Funcionalidades do app"
         subtitle="Arraste para o lado para ver todas as funcionalidades"
       />

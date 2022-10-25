@@ -20,7 +20,7 @@ export function Navbar() {
         {
           icon: <Ruler />,
           name: 'Medidas',
-          link: '/trainings',
+          link: '/measurements',
         },
         {
           icon: <Crosshair />,

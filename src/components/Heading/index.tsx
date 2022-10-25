@@ -1,23 +1,21 @@
-import { HeadingContainer } from './styles'
+import { ReactNode } from 'react'
+import { HeadingContainer, Subtitle } from './styles'
 
 interface Props {
+  icon: ReactNode
   title: string
   subtitle: string
-  centerTitle?: boolean
-  centerSubtitle?: boolean
 }
 
-export function Heading({
-  title,
-  subtitle,
-  centerTitle = false,
-  centerSubtitle = false,
-}: Props) {
+export function Heading({ icon, title, subtitle }: Props) {
   return (
-    <HeadingContainer centerTitle={centerTitle} centerSubtitle={centerSubtitle}>
-      <strong>{title}</strong>
+    <HeadingContainer>
+      <header>
+        {icon}
+        <strong>{title}</strong>
+      </header>
 
-      <span>{subtitle}</span>
+      <Subtitle>{subtitle}</Subtitle>
     </HeadingContainer>
   )
 }

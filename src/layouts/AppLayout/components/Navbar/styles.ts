@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export const MenuContainer = styled.aside``
+export const MenuContainer = styled.aside`
+  margin-right: 7rem;
+`
 
 export const Menu = styled.div`
   margin-bottom: 2rem;

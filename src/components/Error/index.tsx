@@ -1,13 +1,15 @@
 import { WarningCircle } from 'phosphor-react'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import { ErrorContainer } from './styles'
 
-interface Props {
+interface Props
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   error: string
 }
 
-export function Error({ error }: Props) {
+export function Error({ error, ...rest }: Props) {
   return (
-    <ErrorContainer>
+    <ErrorContainer {...rest}>
       <WarningCircle size={28} />
 
       <span>{error}</span>

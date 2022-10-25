@@ -27,7 +27,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
       ? theme['yellow-500']
       : theme['purple-500']};
 
-    &:hover {
+    &:hover:not(:disabled) {
       background: ${variant === 'primary'
         ? theme['yellow-600']
         : theme['purple-600']};
@@ -35,6 +35,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   `}
 
   &:disabled {
-    opacity: 0.7;
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `

@@ -8,7 +8,7 @@ import { DownloadAppContainer, Links } from './styles'
 /* ASSETS */
 import DownloadGooglePlay from '../../assets/download-google-play.svg'
 import DownloadAppleStore from '../../assets/download-apple-store.svg'
-import { Heading } from '../Heading'
+import { HeadingLandingPage } from '../HeadingLandingPage'
 
 export function DownloadApp() {
   return (
@@ -23,7 +23,7 @@ export function DownloadApp() {
         </Link>
       </Links>
 
-      <Heading
+      <HeadingLandingPage
         title="Baixe o nosso app"
         subtitle="Nosso app está disponível na Google Play e também 
         na Apple Store. Caso você deseje, também é possível 

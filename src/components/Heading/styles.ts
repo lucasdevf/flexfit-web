@@ -1,28 +1,24 @@
 import styled from 'styled-components'
 
-interface HeadingContainerProps {
-  centerTitle: boolean
-  centerSubtitle: boolean
-}
+export const HeadingContainer = styled.div`
+  header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 
-export const HeadingContainer = styled.div<HeadingContainerProps>`
+    strong {
+      font-size: 1.3rem;
+    }
+
+    svg {
+      color: ${({ theme }) => theme['purple-500']};
+      font-size: 1.3rem;
+    }
+  }
+`
+
+export const Subtitle = styled.span`
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  strong {
-    font-size: 2.25rem;
-    font-weight: 500;
-    color: ${({ theme }) => theme['gray-900']};
-    text-align: ${({ centerTitle }) => (centerTitle ? 'center' : 'start')};
-  }
-
-  span {
-    font-size: 1.25rem;
-    color: ${({ theme }) => theme['gray-600']};
-    line-height: 2rem;
-
-    text-align: ${({ centerSubtitle }) =>
-      centerSubtitle ? 'center' : 'justify'};
-  }
+  margin-top: 8px;
+  color: ${({ theme }) => theme['gray-700']};
 `

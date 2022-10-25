@@ -1,19 +1,14 @@
 import axios from 'axios'
 
-import Cookies from 'js-cookie'
+import { parseCookies } from 'nookies'
+
+const cookies = parseCookies()
 
 export const api = axios.create({
   baseURL: 'http://localhost:3333',
-})
-
-api.interceptors.request.use((config) => {
-  if (config.headers) {
-    const token = Cookies.get('access_token')
-
-    config.headers.Authorization = `Bearer ${token}`
-
-    return config
-  }
+  headers: {
+    Authorization: `Bearer ${cookies['flexFit:access_token']}`,
+  },
 })
 
 api.interceptors.response.use(

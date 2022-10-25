@@ -4,7 +4,7 @@ import Image from 'next/future/image'
 
 /* COMPONENTS */
 import { Header } from '../components/Header'
-import { Heading } from '../components/Heading'
+import { HeadingLandingPage } from '../components/HeadingLandingPage'
 import { DownloadApp } from '../components/DownloadApp'
 import { Features } from '../components/Features'
 
@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Home | FlexFit</title>
+        <title>FlexFit</title>
       </Head>
 
       <Header />
@@ -43,7 +43,7 @@ export default function Home() {
             <Image src={LineGradient} alt="" />
           </Brand>
 
-          <Heading
+          <HeadingLandingPage
             title="O app para quem quer ter resultado"
             subtitle="Controle seus treinos e suas dietas, defina metas e acompanhe todos os seus resultados em um único app"
           />
