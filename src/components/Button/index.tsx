@@ -26,9 +26,8 @@ export function Button({
         <ClipLoader color="white" size={16} />
       ) : (
         <>
-          {title}
-
           {icon && icon}
+          {title}
         </>
       )}
     </ButtonContainer>

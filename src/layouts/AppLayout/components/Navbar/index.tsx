@@ -10,7 +10,9 @@ import {
   HouseSimple,
   ListChecks,
   Ruler,
+  ShoppingBag,
 } from 'phosphor-react'
+import { Button } from '../../../../components/Button'
 
 export function Navbar() {
   const menus = [
@@ -81,7 +83,7 @@ export function Navbar() {
 
           <Screens>
             {menu.screens.map((screen) => (
-              <Link key={screen.name} href={screen.link}>
+              <Link key={screen.name} href={screen.link} prefetch={false}>
                 <Screen>
                   {screen.icon}
                   {screen.name}
@@ -91,6 +93,12 @@ export function Navbar() {
           </Screens>
         </Menu>
       ))}
+
+      <Button
+        icon={<ShoppingBag size={20} weight="fill" />}
+        title="Acessar loja"
+        variant="secondary"
+      />
     </MenuContainer>
   )
 }

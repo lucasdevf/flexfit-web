@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const StatusTrainingContainer = styled.div`
-  margin-bottom: 48px;
-  width: 100%;
+  margin-bottom: 3rem;
   align-items: center;
   justify-content: center;
 
