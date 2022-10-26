@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export const AppLayoutContainer = styled.div``
+export const AppLayoutContainer = styled.div`
+  padding-bottom: 4rem;
+`
 
 export const Header = styled.header`
   padding: 2rem 0;

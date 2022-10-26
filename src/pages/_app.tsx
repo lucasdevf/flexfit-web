@@ -12,15 +12,15 @@ import { AuthContextProvider } from '../contexts/AuthContext'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={defaultTheme}>
         <AuthContextProvider>
           <Component {...pageProps} />
         </AuthContextProvider>
-      </QueryClientProvider>
 
-      <GlobalStyles />
-    </ThemeProvider>
+        <GlobalStyles />
+      </ThemeProvider>
+    </QueryClientProvider>
   )
 }
 
