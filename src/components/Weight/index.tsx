@@ -24,7 +24,7 @@ export function Weight() {
   )
 
   async function fetchLastMeasurement() {
-    const response = await api.get('/users/measurements/last')
+    const response = await api.get('/measurements/last')
 
     return response.data
   }

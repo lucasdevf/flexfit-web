@@ -21,6 +21,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   justify-content: center;
 
   gap: 0.5rem;
+  font-size: 0.9rem;
 
   ${({ variant, theme }) => css`
     background: ${variant === 'primary'

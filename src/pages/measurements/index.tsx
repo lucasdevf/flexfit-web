@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { GetServerSideProps } from 'next'
+import Head from 'next/head'
 import { parseCookies } from 'nookies'
 import { Ruler } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
@@ -35,7 +36,7 @@ export default function Measurements({ lastMeasurement }: Props) {
   async function save(data: FormSchemaType) {
     const { weight, height } = data
 
-    await api.post('/users/measurements', {
+    await api.post('/measurements', {
       weight: Number(weight),
       height: Number(height),
     })
@@ -78,6 +79,10 @@ export default function Measurements({ lastMeasurement }: Props) {
 
   return (
     <AppLayout>
+      <Head>
+        <title>Medidas | FlexFit</title>
+      </Head>
+
       <MeasurementsContainer>
         <Heading
           icon={<Ruler />}
@@ -122,7 +127,7 @@ export default function Measurements({ lastMeasurement }: Props) {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const cookies = parseCookies(ctx)
 
-  const response = await api.get('/users/measurements/last', {
+  const response = await api.get('/measurements/last', {
     headers: {
       Authorization: `Bearer ${cookies['flexFit:access_token']}`,
     },

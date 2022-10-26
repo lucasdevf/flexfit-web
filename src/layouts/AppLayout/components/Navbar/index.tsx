@@ -25,7 +25,7 @@ export function Navbar() {
         {
           icon: <Crosshair />,
           name: 'Metas',
-          link: '/calendar',
+          link: '/goals',
         },
         {
           icon: <ListChecks />,
