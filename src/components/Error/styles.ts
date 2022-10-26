@@ -9,5 +9,8 @@ export const ErrorContainer = styled.div`
   padding: 1rem;
   border-radius: 8px;
 
-  color: ${(props) => props.theme['red-500']};
+  span,
+  svg {
+    color: ${(props) => props.theme['red-500']};
+  }
 `
