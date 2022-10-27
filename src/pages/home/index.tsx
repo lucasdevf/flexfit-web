@@ -18,6 +18,7 @@ import {
 
 import 'keen-slider/keen-slider.min.css'
 import { ImageHistoric } from '../../components/ImageHistoric'
+import { Checkbox } from '../../components/Checkbox'
 
 export default function Home() {
   const theme = useTheme()
@@ -37,6 +38,12 @@ export default function Home() {
 
       <HomeContainer>
         <Content>
+          <Checkbox
+            label="Você realizou o treino de hoje (16/10) ?"
+            checked={false}
+            onCheck={() => {}}
+          />
+
           <StatusTraining />
 
           <Weight />

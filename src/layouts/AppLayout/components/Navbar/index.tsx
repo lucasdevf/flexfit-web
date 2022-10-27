@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import {
   Barbell,
+  Browsers,
   Calendar,
   Crosshair,
   ForkKnife,
@@ -48,6 +49,11 @@ export function Navbar() {
           icon: <Calendar />,
           name: 'Calendário',
           link: '/calendar',
+        },
+        {
+          icon: <Browsers />,
+          name: 'Tutoriais',
+          link: '/tutorials',
         },
       ],
     },
