@@ -1,13 +1,5 @@
 import { createContext, ReactNode, useCallback, useState } from 'react'
-
-export interface ExerciseProps {
-  id?: string
-  name: string
-  series: number
-  repetitions: number
-  created_at?: string
-  updated_at?: string
-}
+import { ExerciseProps } from '../components/Exercise'
 
 interface CreateTrainingProps {
   name: string
@@ -24,15 +16,15 @@ interface CreateTrainingType {
   clearContext: () => void
 }
 
-export const CreateTraining = createContext({} as CreateTrainingType)
+export const CreateTrainingContext = createContext({} as CreateTrainingType)
 
-interface CreateTrainingProviderProps {
+interface CreateTrainingContextProviderProps {
   children: ReactNode
 }
 
-export function CreateTrainingProvider({
+export function CreateTrainingContextProvider({
   children,
-}: CreateTrainingProviderProps) {
+}: CreateTrainingContextProviderProps) {
   const [training, setTraining] = useState({} as CreateTrainingProps)
 
   const handleChangeWeekdays = useCallback(
@@ -85,7 +77,7 @@ export function CreateTrainingProvider({
   }, [training])
 
   return (
-    <CreateTraining.Provider
+    <CreateTrainingContext.Provider
       value={{
         training,
         handleChangeWeekdays,
@@ -96,6 +88,6 @@ export function CreateTrainingProvider({
       }}
     >
       {children}
-    </CreateTraining.Provider>
+    </CreateTrainingContext.Provider>
   )
 }
