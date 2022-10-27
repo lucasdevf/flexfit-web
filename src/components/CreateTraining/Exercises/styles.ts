@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 export const ExercisesContainer = styled.div`
-  header {
-    margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
+  header {
     h1 {
       font-size: 1.5rem;
       font-weight: 400;

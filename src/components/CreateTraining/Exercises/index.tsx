@@ -19,7 +19,7 @@ export function Exercises() {
 
   const { training } = useContext(CreateTrainingContext)
 
-  const { prevStep } = useContext(StepsCreateTrainingContext)
+  const { prevStep, nextStep } = useContext(StepsCreateTrainingContext)
 
   return (
     <ExercisesContainer>
@@ -43,9 +43,19 @@ export function Exercises() {
         </Dialog.Root>
       </header>
 
-      {training.exercises?.map((exercise) => (
-        <Exercise data={exercise} key={exercise.name} />
-      ))}
+      <div>
+        {training.exercises?.map((exercise) => (
+          <Exercise data={exercise} key={exercise.name} />
+        ))}
+      </div>
+
+      {training.exercises?.length > 0 && (
+        <Button
+          title="Continuar"
+          style={{ marginTop: '1rem' }}
+          onClick={nextStep}
+        />
+      )}
     </ExercisesContainer>
   )
 }
