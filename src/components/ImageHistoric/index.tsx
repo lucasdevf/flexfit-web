@@ -1,8 +1,12 @@
-import { ImageHistoricContainer, Image } from './styles'
-
-import WomanGym from '../../assets/woman-gym.jpg'
 import { ArrowsOut, Share, Trash } from 'phosphor-react'
 import { useTheme } from 'styled-components'
+
+import * as AlertDialog from '@radix-ui/react-alert-dialog'
+
+import { ImageHistoricContainer, Image, Button } from './styles'
+
+import WomanGym from '../../assets/woman-gym.jpg'
+import { ModalAlert } from '../ModalAlert'
 
 export function ImageHistoric() {
   const theme = useTheme()
@@ -12,9 +16,28 @@ export function ImageHistoric() {
       <Image src={WomanGym} alt="" height={284} />
 
       <footer>
-        <Trash color={theme.white} size={20} />
-        <ArrowsOut color={theme.white} size={20} />
-        <Share color={theme.white} size={20} />
+        <AlertDialog.Root>
+          <AlertDialog.Trigger asChild>
+            <Button>
+              <Trash color={theme.white} size={20} />
+            </Button>
+          </AlertDialog.Trigger>
+
+          <ModalAlert
+            title="Excluir imagem"
+            description="Deseja realmente excluir essa imagem?"
+            onConfirm={() => {}}
+            onClose={() => {}}
+          />
+        </AlertDialog.Root>
+
+        <Button>
+          <ArrowsOut color={theme.white} size={20} />
+        </Button>
+
+        <Button>
+          <Share color={theme.white} size={20} />
+        </Button>
       </footer>
     </ImageHistoricContainer>
   )

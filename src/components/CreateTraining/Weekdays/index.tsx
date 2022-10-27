@@ -1,4 +1,5 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { CreateTrainingContext } from '../../../contexts/CreateTrainingContext'
 import { StepsCreateTrainingContext } from '../../../contexts/StepsCreateTrainingContext'
 import { Button } from '../../Button'
 import { Checkbox } from '../../Checkbox'
@@ -6,6 +7,8 @@ import { WeekdaysContainer, WeekdaysList } from './styles'
 
 export function Weekdays() {
   const { nextStep } = useContext(StepsCreateTrainingContext)
+
+  const { handleChangeWeekdays, training } = useContext(CreateTrainingContext)
 
   const [weekdays, setWeekdays] = useState([
     {
@@ -55,6 +58,30 @@ export function Weekdays() {
     )
   }
 
+  function handleContinue() {
+    nextStep()
+
+    handleChangeWeekdays(
+      weekdays.filter((item) => item.checked).map((item) => item.value),
+    )
+  }
+
+  useEffect(() => {
+    const weekdaysContext = training.weekdays
+
+    if (weekdaysContext?.length > 0) {
+      setWeekdays((prevState) =>
+        prevState.map((item) => {
+          if (weekdaysContext.some((weekday) => weekday === item.value)) {
+            item.checked = true
+          }
+
+          return item
+        }),
+      )
+    }
+  }, [])
+
   return (
     <WeekdaysContainer>
       <span>Para quais dias você deseja criar o treino?</span>
@@ -71,7 +98,7 @@ export function Weekdays() {
       </WeekdaysList>
 
       {weekdays.find((item) => item.checked) && (
-        <Button title="Continuar" onClick={nextStep} />
+        <Button title="Continuar" onClick={handleContinue} />
       )}
     </WeekdaysContainer>
   )

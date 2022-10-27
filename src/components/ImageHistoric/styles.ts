@@ -34,3 +34,8 @@ export const ImageHistoricContainer = styled.div`
 export const Image = styled(ImageNext)`
   object-fit: center;
 `
+
+export const Button = styled.button`
+  all: unset;
+  cursor: pointer;
+`

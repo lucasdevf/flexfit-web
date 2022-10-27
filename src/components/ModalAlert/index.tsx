@@ -25,23 +25,25 @@ export function ModalAlert({
   }
 
   return (
-    <Overlay>
-      <Content>
-        <AlertDialog.Title>{title}</AlertDialog.Title>
+    <AlertDialog.Portal>
+      <Overlay>
+        <Content>
+          <AlertDialog.Title>{title}</AlertDialog.Title>
 
-        <Description>{description}</Description>
+          <Description>{description}</Description>
 
-        <Footer>
-          <AlertDialog.Cancel asChild>
-            <CancelButton>Cancelar</CancelButton>
-          </AlertDialog.Cancel>
-          <Button
-            title="Sim, quero excluir"
-            isLoading={isLoading}
-            onClick={handleConfirm}
-          />
-        </Footer>
-      </Content>
-    </Overlay>
+          <Footer>
+            <AlertDialog.Cancel asChild>
+              <CancelButton>Cancelar</CancelButton>
+            </AlertDialog.Cancel>
+            <Button
+              title="Sim, quero excluir"
+              isLoading={isLoading}
+              onClick={handleConfirm}
+            />
+          </Footer>
+        </Content>
+      </Overlay>
+    </AlertDialog.Portal>
   )
 }

@@ -2,8 +2,6 @@ import Head from 'next/head'
 import { Barbell } from 'phosphor-react'
 import { useQuery } from 'react-query'
 
-import * as Dialog from '@radix-ui/react-dialog'
-
 import { Heading } from '../../components/Heading'
 import { Training } from '../../components/Training'
 import { AppLayout } from '../../layouts/AppLayout'
@@ -13,9 +11,10 @@ import {
   TrainingsContainer,
   TrainingsList,
 } from '../../styles/pages/trainings'
-import { CreateTraining } from '../../components/CreateTraining'
-import { StepsCreateTrainingContextProvider } from '../../contexts/StepsCreateTrainingContext'
+import { StepsCreateTrainingContext } from '../../contexts/StepsCreateTrainingContext'
 import Link from 'next/link'
+import { useContext, useEffect } from 'react'
+import { CreateTrainingContext } from '../../contexts/CreateTrainingContext'
 
 export interface TrainingProps {
   id: string
@@ -25,6 +24,9 @@ export interface TrainingProps {
 }
 
 export default function Trainings() {
+  const { clearContext } = useContext(CreateTrainingContext)
+  const { resetStep } = useContext(StepsCreateTrainingContext)
+
   const { data: trainings } = useQuery<TrainingProps[]>(
     '@trainigs/trainings',
     fetchTrainings,
@@ -35,6 +37,12 @@ export default function Trainings() {
 
     return response.data
   }
+
+  useEffect(() => {
+    clearContext()
+
+    resetStep()
+  }, [])
 
   return (
     <AppLayout>
