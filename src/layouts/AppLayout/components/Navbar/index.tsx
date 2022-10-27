@@ -97,7 +97,7 @@ export function Navbar() {
       <Button
         icon={<ShoppingBag size={20} weight="fill" />}
         title="Acessar loja"
-        variant="secondary"
+        variant="blue"
       />
     </MenuContainer>
   )

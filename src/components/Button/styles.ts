@@ -1,9 +1,26 @@
 import styled, { css } from 'styled-components'
 
-export type ButtonVariant = 'primary' | 'secondary'
+import { defaultTheme } from '../../styles/theme/default'
+
+export type ButtonVariant = 'primary' | 'secondary' | 'blue'
 
 interface ButtonContainerProps {
   variant: ButtonVariant
+}
+
+const buttonVariants = {
+  primary: {
+    background: defaultTheme['yellow-500'],
+    hover: defaultTheme['yellow-600'],
+  },
+  secondary: {
+    background: defaultTheme['purple-500'],
+    hover: defaultTheme['purple-600'],
+  },
+  blue: {
+    background: defaultTheme['blue-500'],
+    hover: defaultTheme['blue-600'],
+  },
 }
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
@@ -23,15 +40,11 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   gap: 0.5rem;
   font-size: 0.9rem;
 
-  ${({ variant, theme }) => css`
-    background: ${variant === 'primary'
-      ? theme['yellow-500']
-      : theme['purple-500']};
+  ${({ variant }) => css`
+    background: ${buttonVariants[variant].background};
 
     &:hover:not(:disabled) {
-      background: ${variant === 'primary'
-        ? theme['yellow-600']
-        : theme['purple-600']};
+      background: ${buttonVariants[variant].hover};
     }
   `}
 

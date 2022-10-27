@@ -51,8 +51,10 @@ export function AddExercise({ onClose }: Props) {
       reset()
 
       onClose()
-    } catch (err) {
-      setError(String(err))
+    } catch (err: any) {
+      setError(
+        String(err?.message ?? 'Não foi possível adicionar o exercício.'),
+      )
     }
   }
 
