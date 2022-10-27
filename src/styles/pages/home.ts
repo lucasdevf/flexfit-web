@@ -13,6 +13,13 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
 `
 
 export const ImagesContainer = styled.div`
@@ -31,6 +38,8 @@ export const AddImage = styled.div`
 
   border: 1px dashed ${({ theme }) => theme['gray-500']};
   border-radius: 8px;
+
+  min-height: 284px;
 
   span {
     color: ${({ theme }) => theme['gray-500']};

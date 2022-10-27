@@ -5,15 +5,27 @@ import * as AlertDialog from '@radix-ui/react-alert-dialog'
 
 import { ImageHistoricContainer, Image, Button } from './styles'
 
-import WomanGym from '../../assets/woman-gym.jpg'
 import { ModalAlert } from '../ModalAlert'
 
-export function ImageHistoric() {
+export interface ImageHistoryProps {
+  image_name: string
+}
+
+interface Props {
+  data: ImageHistoryProps
+}
+
+export function ImageHistoric({ data }: Props) {
   const theme = useTheme()
 
   return (
     <ImageHistoricContainer className="keen-slider__slide">
-      <Image src={WomanGym} alt="" height={284} />
+      <Image
+        src={`http://localhost:3333/uploads/${data.image_name}`}
+        alt=""
+        height={284}
+        width={284}
+      />
 
       <footer>
         <AlertDialog.Root>

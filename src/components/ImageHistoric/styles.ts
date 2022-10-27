@@ -32,7 +32,7 @@ export const ImageHistoricContainer = styled.div`
 `
 
 export const Image = styled(ImageNext)`
-  object-fit: center;
+  object-fit: cover;
 `
 
 export const Button = styled.button`

@@ -17,8 +17,13 @@ import {
 } from '../../styles/pages/home'
 
 import 'keen-slider/keen-slider.min.css'
-import { ImageHistoric } from '../../components/ImageHistoric'
+import {
+  ImageHistoric,
+  ImageHistoryProps,
+} from '../../components/ImageHistoric'
 import { Checkbox } from '../../components/Checkbox'
+import { useQuery } from 'react-query'
+import { api } from '../../services/api'
 
 export default function Home() {
   const theme = useTheme()
@@ -30,6 +35,17 @@ export default function Home() {
     },
   })
 
+  const { data: imagesHistory } = useQuery<ImageHistoryProps[]>(
+    '@images-history/home',
+    fetchImagesHistory,
+  )
+
+  async function fetchImagesHistory() {
+    const response = await api.get('/images-history')
+
+    return response.data
+  }
+
   return (
     <AppLayout>
       <Head>
@@ -38,13 +54,15 @@ export default function Home() {
 
       <HomeContainer>
         <Content>
-          <Checkbox
-            label="Você realizou o treino de hoje (16/10) ?"
-            checked={false}
-            onCheck={() => {}}
-          />
+          <header>
+            <Checkbox
+              label="Você realizou o treino de hoje (16/10) ?"
+              checked={false}
+              onCheck={() => {}}
+            />
 
-          <StatusTraining />
+            <StatusTraining />
+          </header>
 
           <Weight />
         </Content>
@@ -63,11 +81,9 @@ export default function Home() {
               <span>Adicionar imagem</span>
             </AddImage>
 
-            <ImageHistoric />
-            <ImageHistoric />
-            <ImageHistoric />
-            <ImageHistoric />
-            <ImageHistoric />
+            {imagesHistory?.map((image) => (
+              <ImageHistoric key={image.image_name} data={image} />
+            ))}
           </ImagesList>
         </ImagesContainer>
       </HomeContainer>
