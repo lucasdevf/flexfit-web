@@ -1,11 +1,21 @@
 import Head from 'next/head'
 import { Barbell } from 'phosphor-react'
 import { useQuery } from 'react-query'
+
+import * as Dialog from '@radix-ui/react-dialog'
+
 import { Heading } from '../../components/Heading'
 import { Training } from '../../components/Training'
 import { AppLayout } from '../../layouts/AppLayout'
 import { api } from '../../services/api'
-import { TrainingsContainer, TrainingsList } from '../../styles/pages/trainings'
+import {
+  ButtonCreate,
+  TrainingsContainer,
+  TrainingsList,
+} from '../../styles/pages/trainings'
+import { CreateTraining } from '../../components/CreateTraining'
+import { StepsCreateTrainingContextProvider } from '../../contexts/StepsCreateTrainingContext'
+import Link from 'next/link'
 
 export interface TrainingProps {
   id: string
@@ -38,6 +48,10 @@ export default function Trainings() {
           title="Meus treinos"
           subtitle="Visualize e gerencie todos os seus treinos"
         />
+
+        <Link href="/create/training">
+          <ButtonCreate title="Criar treino" />
+        </Link>
 
         <TrainingsList>
           {trainings?.map((training) => (

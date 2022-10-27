@@ -4,7 +4,7 @@ import { HeadingContainer, Subtitle } from './styles'
 interface Props {
   icon?: ReactNode
   title: string
-  subtitle: string
+  subtitle?: string
 }
 
 export function Heading({ icon, title, subtitle }: Props) {

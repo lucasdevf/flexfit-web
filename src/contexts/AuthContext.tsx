@@ -32,17 +32,13 @@ export function AuthContextProvider({ children }: AuthContextProviderProps) {
   const isAuthenticated = !!user
 
   async function signIn(data: SignInProps) {
-    try {
-      const response = await api.post('/auth/login', data)
+    const response = await api.post('/auth/login', data)
 
-      setCookie(undefined, 'flexFit:access_token', response.data.access_token)
+    setCookie(undefined, 'flexFit:access_token', response.data.access_token)
 
-      setUser(response.data.user)
+    setUser(response.data.user)
 
-      router.push('/home')
-    } catch (error: any) {
-      throw Error(error)
-    }
+    router.push('/home')
   }
 
   return (

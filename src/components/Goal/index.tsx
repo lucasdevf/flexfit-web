@@ -1,5 +1,8 @@
 import { Calendar, Crosshair } from 'phosphor-react'
 import { useTheme } from 'styled-components'
+
+import * as AlertDialog from '@radix-ui/react-alert-dialog'
+
 import { dateFormatter } from '../../utils/formatter'
 import { ActionsRegister } from '../ActionsRegister'
 import { GoalContainer, Content, ItemGoal } from './styles'
@@ -40,7 +43,9 @@ export function Goal({ data }: Props) {
         </footer>
       </Content>
 
-      <ActionsRegister />
+      <AlertDialog.Root>
+        <ActionsRegister />
+      </AlertDialog.Root>
     </GoalContainer>
   )
 }
